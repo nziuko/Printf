@@ -1,8 +1,11 @@
-#ifndef _FILE_NAME_H_
-#define _FILE_NAME_H_
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+
+#define UNUSED(x) (void)(x)
+#define BUFF_SIZE 1024
 
 /* FLAGS */
 #define F_MINUS 1
@@ -38,5 +41,6 @@ typedef struct fmt fmt_t;
 
 int _printf(const char *format, ...);
 int handle_print(const char *fmt, int *i,
-va_list list, char buffer[], int flags, int width, int precision, int size
+va_list list, char buffer[], int flags, int width, int precision, int size);
+
 #endif /* MAIN_H */
