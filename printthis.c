@@ -15,14 +15,14 @@ int printthis(const char *format, va_list args)
 	char *s;
 
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	while (*format)
 	{
 		if (*format != '%')
+		{
 			j = write(1, format, 1);
 			i += j;
+		}
 		else if (*format == '%')
 		{
 			format++;
