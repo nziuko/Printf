@@ -38,7 +38,7 @@ int printthis(const char *format, va_list args)
 				case 's':
 				s = va_arg(args, char*);
 				if (s == NULL)
-					return (-1);
+					s = "(null)";
 				while (*s)
 				{
 					j = write(1, s, 1);
