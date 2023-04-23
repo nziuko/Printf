@@ -10,8 +10,7 @@
 int printthis(const char *format, va_list args)
 {
 	int i = 0, j = 0;
-	char ch;
-	char *s;
+	char ch, *s;
 
 	if (format == NULL)
 		return (-1);
@@ -27,18 +26,16 @@ int printthis(const char *format, va_list args)
 			format++;
 			switch (*format)
 			{
-				case '%':{
+				case '%':
 				j = write(1, format, 1);
 				i += j;
 				break;
-				}
-				case 'c':{
+				case 'c':
 				ch = va_arg(args, int);
 				j = write(1, &ch, 1);
 				i += j;
 				break;
-				}
-				case 's':{
+				case 's':
 				s = va_arg(args, char*);
 				while (*s)
 				{
@@ -47,7 +44,6 @@ int printthis(const char *format, va_list args)
 					s++;
 				}
 				break;
-				}
 			}
 		}
 		format++;
