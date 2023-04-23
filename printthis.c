@@ -24,11 +24,6 @@ int printthis(const char *format, va_list args)
 			format++;
 			if (*format == '\0')
 				return (i);
-			else if (*format == '\n')
-			{
-				j = write(1, format, 1);
-				i += j;
-			}
 			switch (*format)
 			{
 				case 'c':
