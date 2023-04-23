@@ -12,8 +12,6 @@ int printthis(const char *format, va_list args)
 	int i = 0, j = 0;
 	char ch, *s;
 
-	if (format == NULL)
-		return (-1);
 	while (*format)
 	{
 		if (*format != '%')
@@ -24,6 +22,8 @@ int printthis(const char *format, va_list args)
 		else if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+				return (-1);
 			switch (*format)
 			{
 				case '%':
