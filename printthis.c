@@ -10,7 +10,7 @@
 int printthis(const char *format, va_list args)
 {
 	int i = 0, j = 0;
-	char ch, *s;
+	char ch, *s, c = '%';
 
 	while (*format)
 	{
@@ -43,8 +43,9 @@ int printthis(const char *format, va_list args)
 				}
 				break;
 				default:
+				j = write(1, &c, 1);
 				j = write(1, format, 1);
-				i += j;
+				i += 2;
 				break;
 			}
 		}
