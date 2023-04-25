@@ -33,6 +33,10 @@ int printthis(const char *format, va_list args)
 				case 's':
 				i += stringhandler(args);
 				break;
+				case 'd':
+				case 'i':
+				i += inthandler(args);
+				break;
 				default:
 				i += defaulthandler(format);
 				break;

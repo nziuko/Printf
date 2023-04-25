@@ -11,4 +11,6 @@ int _putchar(char c);
 int stringhandler(va_list args);
 int charhandler(va_list args);
 int defaulthandler(const char *format);
+int inthandler(va_list args);
+
 #endif
