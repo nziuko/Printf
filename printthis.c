@@ -10,7 +10,6 @@
 int printthis(const char *format, va_list args)
 {
 	int i = 0;
-	char ch, *s;
 
 	while (*format)
 	{
@@ -29,19 +28,13 @@ int printthis(const char *format, va_list args)
 				i += _putchar('%');
 				break;
 				case 'c':
-				ch = va_arg(args, int);
-				i += _putchar(ch);
+				i += charhandler(args);
 				break;
 				case 's':
-				s = va_arg(args, char*);
-				if (s == NULL)
-					s = "(null)";
-				for (; *s != '\0'; s++)
-					i += _putchar(*s);
+				i += stringhandler(args);
 				break;
 				default:
-				i += _putchar('%');
-				i += _putchar(*format);
+				i += defaulthandler(format);
 				break;
 			}
 		}

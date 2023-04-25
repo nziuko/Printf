@@ -5,10 +5,11 @@
  * Return:  number of characters printed
  */
 
-int charhandler(va_list args);
+int charhandler(va_list args)
 {
 char ch;
 int i = 0;
+
 ch = va_arg(args, int);
 i += _putchar(ch);
 return (i);
