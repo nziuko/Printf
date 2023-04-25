@@ -7,9 +7,9 @@
  */
 int inthandler(va_list args)
 {
-	int x, xx;
-	int i = 0;
-	int decimal = 1;
+	unsigned int x, xx;
+	unsigned int i = 0;
+	unsigned int decimal = 1;
 
 	x = va_arg(args, int);
 	if (x < 0)
